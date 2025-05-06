@@ -3,8 +3,8 @@ class Library {
     this.books = [];
   }
 
-  addbook(...book) {
-    this.books.push(book);
+  addbooks(...books) {
+    this.books.push(...books); // Spread to add multiple books individually
   }
 
   listAllBooks() {
@@ -45,12 +45,14 @@ class Book {
 // Create books
 let b1 = new Book("Harry Potter", "1234567890", 500, "F. Scott Fitzgerald");
 let b2 = new Book("The Alchemist", "0987654321", 300, "Paulo Coelho");
-let b3 = new Book("Good Code", "1234567890", 500, "Hitarth Shah");
-let b4 = new Book("The Alchemist", "0987654321", 300, "Paulo Coelho");
+let b3 = new Book("Good Code", "1122334455", 500, "Hitarth Shah");
+let b4 = new Book("The Hobbit", "5566778899", 350, "J.R.R. Tolkien");
 
 // Create library
 let jhasiLibrary = new Library();
-jhasiLibrary.addbook([b1, b2, b3, b4]);
+
+// Add books to the library
+jhasiLibrary.addbooks(b1, b2, b3, b4);
 
 // List all books
 // jhasiLibrary.listAllBooks();
