@@ -3,14 +3,14 @@ class Library {
     this.books = [];
   }
 
-  addbook(book) {
+  addbook(...book) {
     this.books.push(book);
   }
 
   listAllBooks() {
     console.log("List of all books:");
-    this.books.forEach(function (Book) {
-      console.log(`Book Name: ${Book.name}`);
+    this.books.forEach(function (Book, index) {
+      console.log(`${index + 1}) Book Name: ${Book.name} by ${Book.author}`);
     });
   }
 }
@@ -45,11 +45,12 @@ class Book {
 // Create books
 let b1 = new Book("Harry Potter", "1234567890", 500, "F. Scott Fitzgerald");
 let b2 = new Book("The Alchemist", "0987654321", 300, "Paulo Coelho");
+let b3 = new Book("Good Code", "1234567890", 500, "Hitarth Shah");
+let b4 = new Book("The Alchemist", "0987654321", 300, "Paulo Coelho");
 
 // Create library
 let jhasiLibrary = new Library();
-jhasiLibrary.addbook(b1);
-jhasiLibrary.addbook(b2);
+jhasiLibrary.addbook([b1, b2, b3, b4]);
 
 // List all books
 // jhasiLibrary.listAllBooks();
