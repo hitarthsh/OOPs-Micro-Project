@@ -29,12 +29,24 @@ class Book {
     this.isbn = isbn; // kitaabe ka ISBN number
     this.price = price; // kitaabe ka price
     this.author = author; // kitaabe ka author
+    this.readStatus = false; // kitaabe ka read status
   }
 
   info() {
     console.log(
-      `Book Name: ${this.name} is written by ${this.author} and is available at amazon at a price range of ${this.price}.`
-    );
+      `${this.readStatus ? "✅" : "❌"} Name: ${this.name}, ISBN: ${
+        this.isbn
+      }, Price: ${this.price}, Author: ${this.author}`
+    ); // kitaabe ka info function
+  }
+
+  changeReadStatus() {
+    this.readStatus = !this.readStatus; // kitaabe ka read status change karne ka function
+    if (this.readStatus) {
+      console.log(`You have read ${this.name}.`);
+    } else {
+      console.log(`You have not read ${this.name}.`);
+    }
   }
 }
 
@@ -49,4 +61,4 @@ jhasiLibrary.listAllBooks(); // kitaabe list karne ka function
 let b1 = new Book("Harry Potter", "1234567890", 500, "F. Scott Fitzgerald"); // kitaabe ka object
 let b2 = new Book("The Alchemist", "0987654321", 300, "Paulo Coelho"); // kitaabe ka object
 
-b1.info(); // kitaabe ka info function
+// b1.info(); // kitaabe ka info function
