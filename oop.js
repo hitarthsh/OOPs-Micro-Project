@@ -1,35 +1,27 @@
-// class Library {
-// add kitaabe
-// kitaabe issue
-// kitaabe return
-// kitaabe padhi
-// list of all books
-// }
-
 class Library {
   constructor() {
-    this.books = []; // saari books ka record yaha par hai
+    this.books = [];
   }
 
   addbook(book) {
-    this.books.push(book); // kitaabe add karne ka function
+    this.books.push(book);
   }
 
   listAllBooks() {
-    //     console.log("List of all books:");
-    this.books.forEach(function (book) {
-      console.log(book);
+    console.log("List of all books:");
+    this.books.forEach(function (Book) {
+      console.log(`Book Name: ${Book.name}`);
     });
   }
 }
 
 class Book {
   constructor(name, isbn, price, author) {
-    this.name = name; // kitaabe ka naam
-    this.isbn = isbn; // kitaabe ka ISBN number
-    this.price = price; // kitaabe ka price
-    this.author = author; // kitaabe ka author
-    this.readStatus = false; // kitaabe ka read status
+    this.name = name;
+    this.isbn = isbn;
+    this.price = price;
+    this.author = author;
+    this.readStatus = false;
   }
 
   info() {
@@ -37,28 +29,27 @@ class Book {
       `${this.readStatus ? "✅" : "❌"} Name: ${this.name}, ISBN: ${
         this.isbn
       }, Price: ${this.price}, Author: ${this.author}`
-    ); // kitaabe ka info function
+    );
   }
 
   changeReadStatus() {
-    this.readStatus = !this.readStatus; // kitaabe ka read status change karne ka function
-    if (this.readStatus) {
-      console.log(`You have read ${this.name}.`);
-    } else {
-      console.log(`You have not read ${this.name}.`);
-    }
+    this.readStatus = !this.readStatus;
+    console.log(
+      this.readStatus
+        ? `You have read ${this.name}.`
+        : `You have not read ${this.name}.`
+    );
   }
 }
 
+// Create books
+let b1 = new Book("Harry Potter", "1234567890", 500, "F. Scott Fitzgerald");
+let b2 = new Book("The Alchemist", "0987654321", 300, "Paulo Coelho");
+
+// Create library
 let jhasiLibrary = new Library();
-jhasiLibrary.addbook("Harry Potter"); // kitaabe add karne ka function
-jhasiLibrary.addbook("The Alchemist"); // kitaabe add karne ka function
-jhasiLibrary.addbook("The Da Vinci Code"); // kitaabe add karne ka function
-jhasiLibrary.addbook("The Hobbit"); // kitaabe add karne ka function
-jhasiLibrary.addbook("The Lord of the Rings"); // kitaabe add karne ka function
-jhasiLibrary.listAllBooks(); // kitaabe list karne ka function
+jhasiLibrary.addbook(b1);
+jhasiLibrary.addbook(b2);
 
-let b1 = new Book("Harry Potter", "1234567890", 500, "F. Scott Fitzgerald"); // kitaabe ka object
-let b2 = new Book("The Alchemist", "0987654321", 300, "Paulo Coelho"); // kitaabe ka object
-
-// b1.info(); // kitaabe ka info function
+// List all books
+// jhasiLibrary.listAllBooks();
