@@ -27,15 +27,13 @@ class Mobile {
   }
 
   getmobileinfo() {
-    return `Brand: ${this.brand}, Model: ${this.model},Price: ${
-      this.price
-    }, Color: ${this.color} Sim: ${this.sim.toString()}`;
+    return `Brand: ${this.brand}, Model: ${this.model},Price: ${this.price}, Color: ${this.color}`;
   }
-  insertSim() {
+  insertSim(sim) {
     if (this.sim.length === 2) {
       console.log("Sim slot is full");
     }
-    this.sim.push("Sim " + (this.sim.length + 1));
+    this.sim.push(sim);
   }
 }
 
